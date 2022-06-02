@@ -1,45 +1,66 @@
-//Типы данных
+//functions
 
-const isProgrammer = true;
-const name = "Andrey";
-const age = 26;
-let x;
-
-console.log(typeof isProgrammer);
-console.log(typeof name);
-console.log(typeof age);
-console.log(typeof x);
-console.log(typeof null);
-
-//5 Приоритет операторов
-const fullAge = 26;
-const birthYear = 1993;
-const currentYear = 2022;
-
-const isFullAge = currentYear - birthYear >= fullAge;
-console.log(isFullAge);
-
-// 6 Условные операторы
-
-const courseStatus = "pendin";
-
-if (courseStatus === "ready") {
-  console.log("Course is ready");
-} else if (courseStatus === "pending") {
-  console.log("Course is not ready yet");
-} else {
-  console.log("Fail");
+function calculateYear(year) {
+  return 2022 - year;
 }
 
-const num1 = 42;
-const num2 = "42";
-console.log(num1 === num2);
+const myAge = calculateYear(1999);
+console.log(myAge);
 
-const isReady = "true";
-if (isReady) {
-  console.log("Ready");
-} else {
-  console.log("Not yet");
+function logInfoAbout(name, year) {
+  const age = calculateYear(year);
+  if (age > 0) {
+    console.log("Человек по имени " + name + " имеет возраст " + age);
+  } else {
+    console.log("Такого не может быть");
+  }
 }
 
-isReady ? console.log("Ready") : console.log("Not Ready");
+logInfoAbout("Andrey", 4054);
+
+// 9 Array
+
+const cars = ["mazda", "BMW", "IZh"];
+const carsNew = new Array("mazda", "BMW", "IZh");
+console.log(cars);
+console.log(carsNew);
+console.log(cars[1]);
+console.log(cars[4]);
+console.log(cars.length);
+
+cars[0] = "Porshe";
+cars[4] = "Жигуль";
+cars[cars.length] = "Жигульlast";
+
+console.log(cars);
+
+//Циклы
+
+for (let i = 0; i < cars.length; i++) {
+  console.log(cars[i]);
+}
+
+for (let car of cars) {
+  console.log(car);
+}
+
+// 11 Objects
+const person = {
+  firstName: "Andrew",
+  lastName: "Surname",
+  year: 1993,
+  language: ["Ru", "En", "De"],
+  hasWife: false,
+  greet: function () {
+    console.log("greet from person");
+  },
+};
+
+console.log(person);
+console.log(person.firstName);
+console.log(person["lastName"]);
+person.newItem = "New Item";
+
+console.log(person);
+
+person.greet();
