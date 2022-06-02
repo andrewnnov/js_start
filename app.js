@@ -22,3 +22,13 @@ console.log(+stringInt + 2);
 
 console.log("?", 0.4 + 0.2);
 console.log(parseFloat((0.4 + 0.2).toFixed(1)));
+
+//BigInt
+console.log(900719925474099145534n);
+
+//Math
+function getRandomBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+console.log(getRandomBetween(10, 42));
